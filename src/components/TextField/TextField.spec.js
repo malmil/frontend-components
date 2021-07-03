@@ -141,7 +141,7 @@ describe('TextField komponent', () => {
 
   it('rendrer TextFiled i lesemodus', () => {
     const wrapper = oppsettFullDOM({
-      readonly: true,
+      readOnly: true,
       editable: true
     });
     const editButton = wrapper.find('button.ms-Button--icon');
@@ -156,7 +156,7 @@ describe('TextField komponent', () => {
     editButton.simulate('click');
     input = wrapper.find('input');
     expect(wrapper.state('editMode')).toEqual(true);
-    expect(input.prop('readOnly')).toEqual('');
+    expect(input.prop('readOnly')).toEqual(false);
 
     input.simulate('blur');
     input = wrapper.find('input');
